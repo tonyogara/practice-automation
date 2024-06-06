@@ -21,8 +21,10 @@ public class TestBase {
 		try
 		{
 			FileInputStream ip = new FileInputStream(
-				"/Users/tony/Documents/Learning/Practice_Automation/Practice_Automation_ArtId/src/main/java/com/practice_automation/qa/config");
+				"/Users/tony/Documents/Learning/Practice_Automation/Practice_Automation_ArtId/src/main/java/com/practice_automation/qa/config/config.properties");
 			prop.load(ip);
+			browserName = prop.getProperty("browser");
+			
 		} catch (FileNotFoundException e)
 			{
 				e.printStackTrace();
@@ -37,9 +39,15 @@ public class TestBase {
 	public void initialisation()
 	{
 		if (browserName.equalsIgnoreCase("Chrome"))
-		{
-				System.setProperty("webDriver.chrome.driver", "/Users/tony/Documents/Learning/FreeCrm/FreeCrmArtId/src/main/java/com/crm/qa/chromedriver/chromedriver");
-				ChromeOptions options = new ChromeOptions();
+		{		///Users/tony/Documents/Learning/Practice_Automation/Practice_Automation_ArtId/src/main/java/com/practice_automation/qa/chromedriver/chromedriver
+				  ///Users/tony/Documents/Learning/FreeCrm/FreeCrmArtId/src/main/java/com/crm/qa/chromedriver/chromedriver
+			
+															   
+			
+				//System.setProperty("webDriver.chrome.driver", "/Users/tony/Documents/Learning/Practice_Automation/Practice_Automation_ArtId/src/main/java/com/practice_automation/qa/chromedriver/chromedriver");
+				
+			System.setProperty("webdriver.chrome.driver", "/Users/tony/Documents/Learning/FreeCrm/FreeCrmArtId/src/main/java/com/crm/qa/chromedriver/chromedriver");
+			ChromeOptions options = new ChromeOptions();
 				options.addArguments("--remote-allow-origins=*");
 				webDriver = new ChromeDriver(options);
 		}
