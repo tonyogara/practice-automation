@@ -31,7 +31,9 @@ public class SelectCalandarDate extends TestBase{
 
 	@When("I enter a date successfully")
 	public void i_enter_a_date_successfully() {
-		calendars.enterADate();
+		//calendars.enterADate();
+		calendars.enterDate("22", "April", "1973");
+		
 		System.out.println("When statement");
 		
 	}
