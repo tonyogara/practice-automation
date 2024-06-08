@@ -18,51 +18,35 @@ public class Calendars extends TestBase {
 	public void enterDate(String day, String month, String year)
 	{
 		
-		//back button
-		//body/div[@id='ui-datepicker-div']/div[1]/a[1]
-		
-		//forward button
-		//body/div[@id='ui-datepicker-div']/div[1]/a[2]
-		
-		//Date text box
-		////input[@id='g1065-selectorenteradate']
+		//Click on the date textbox to display the calendar
 		webDriver.findElement(By.xpath("//input[@id='g1065-selectorenteradate']")).click();
 		
-		//day = //a[contains(text(),'20')]
-		//WebElement dayElement = webDriver.findElement(By.xpath("//a[contains(text(),'"+day+"')]"));
-		//.sendKeys(day);
-		//dayElement.click();
 		
-		//month = //span[contains(text(),'June')]
-		//WebElement monthElement = webDriver.findElement(By.xpath("//span[contains(text(),'month')]"));
-		//.sendKeys(month);
-		
-		//year = //body/div[@id='ui-datepicker-div']/div[1]/div[1]/span[2]
-		//WebElement yearElement = webDriver.findElement(By.xpath("//body/div[@id='ui-datepicker-div']/div[1]/div[1]/span[2])]"));
-		//.sendKeys(year);
-		
+		//Loop through the calendar to find the specified month and year
 		while (true)
 		{
-			//String currentMonth = webDriver.findElement(By.xpath("/html[1]/body[1]/div[6]/div[1]/div[1]/span[1]")).getText();
-			String currentMonth = webDriver.findElement(By.cssSelector("body.page-template-default.page.page-id-1065.custom-background.wp-custom-logo.jps-theme-exs-pro.singular.no-sidebar.btns-bold.btns-colormain.btns-rounded.menu-bold.dom-loaded.window-loaded:nth-child(2) div.ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all:nth-child(50) div.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all div.ui-datepicker-title > span.ui-datepicker-month")).getText();
+			//Could also compare the initial value on the calander to see if we need to pagenate backwards or forwards
+			String currentDisplayedMonth = webDriver.findElement(By.xpath("/html[1]/body[1]/div[6]/div[1]/div[1]/span[1]")).getText();
 			
-			System.out.println(currentMonth);
-			String currentYear = webDriver.findElement(By.xpath("//body/div[@id='ui-datepicker-div']/div[1]/div[1]/span[2])]")).getText();
+			String currentDisplayedYear = webDriver.findElement(By.xpath("/html[1]/body[1]/div[6]/div[1]/div[1]/span[2]")).getText();
 			
-			if (currentMonth.equalsIgnoreCase(month) && currentYear.equalsIgnoreCase(year))
+			
+			if (currentDisplayedMonth.equalsIgnoreCase(month) && currentDisplayedYear.equalsIgnoreCase(year))
 			{
 				break;
 			}
+			//Select the back button
 			webDriver.findElement(By.xpath("//body/div[@id='ui-datepicker-div']/div[1]/a[1]")).click();
+			
 			
 		}
 		
+		//Select the day
+		webDriver.findElement(By.xpath("//a[contains(text(),'"+day+"')]")).click();
 		
-		
-		
-		
-		
-		
+		//Select the submit button
+		webDriver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/main[1]/div[1]/article[1]/div[1]/div[1]/form[1]/p[1]/button[1]")).click();
+			
 		
 	}
 	
