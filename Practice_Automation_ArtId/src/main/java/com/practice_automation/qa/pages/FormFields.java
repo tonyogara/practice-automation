@@ -1,5 +1,24 @@
 package com.practice_automation.qa.pages;
 
-public class FormFields {
 
+import com.practice_automation.qa.testbase.*;
+
+public class FormFields extends TestBase{
+
+	
+	
+	public FormFields()
+	{
+		super(prop);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

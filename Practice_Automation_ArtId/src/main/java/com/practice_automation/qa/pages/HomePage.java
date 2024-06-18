@@ -31,12 +31,20 @@ public class HomePage extends TestBase {
 		WebElement calElement = webDriver.findElement(By.xpath("html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/main[1]/div[1]/article[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/a[1]"));
 		Actions actions = new Actions(webDriver);
 		actions.moveToElement(calElement).click().perform();
-		
-		
-		
-		
 				
 	}
+	
+	
+	public void selectFormFieldPage()
+	{
+		
+		WebElement frmFieldPageElement = webDriver.findElement(By.xpath("//a[contains(text(),'Form Fields')]"));
+		frmFieldPageElement.click();
+		
+		
+	}
+	
+	
 	
 	
 	

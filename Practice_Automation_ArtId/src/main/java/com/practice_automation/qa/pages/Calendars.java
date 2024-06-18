@@ -15,7 +15,7 @@ public class Calendars extends TestBase {
 	}
 	
 	
-	public void enterDate(String day, String month, String year)
+	public void pagenatToAndSelectDate(String day, String month, String year)
 	{
 		
 		//Click on the date textbox to display the calendar
